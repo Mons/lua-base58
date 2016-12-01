@@ -1,7 +1,8 @@
 local ffi = require 'ffi'
 -- local uuid = require 'uuid'
 
-local lib = ffi.load('/Users/mons/work/YesTree/hitbox/app/libbase58.dylib')
+
+local lib = ffi.load(package.searchpath('libbase58', package.cpath), true)
 local GENBUF = 256
 
 local genbuf = ffi.new('char[?]',GENBUF)
